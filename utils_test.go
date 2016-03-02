@@ -67,3 +67,20 @@ func TestTanhOut2Deriv(t *testing.T) {
 		t.Error("actualOut from TanhOut2Deriv did not equal the expectedOut")
 	}
 }
+
+func TestRelu(t *testing.T) {
+	testIn := 3.0
+	testInDeriv := true
+	expectedOut := 1.0
+	actualOut := Relu(testIn, testInDeriv)
+	if actualOut != expectedOut {
+		t.Error("actualOut from Relu did not equal the expectedOut")
+	}
+
+	testInDeriv = false
+	expectedOut = 3.0
+	actualOut = Relu(testIn, testInDeriv)
+	if actualOut != expectedOut {
+		t.Error("actualOut from Relu did not equal the expectedOut")
+	}
+}

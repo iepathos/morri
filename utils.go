@@ -52,8 +52,13 @@ func TanhOut2Deriv(out float64) float64 {
 	return (1.0 - math.Pow(out, 2))
 }
 
-// func relu(x, deriv=False) {
-//     if(deriv):
-//         return int(x >= 0)
-//     return math.Max(0, x)
-// }
+func Relu(x float64, deriv bool) float64 {
+	if deriv {
+		if x >= 0 {
+			return 1.0
+		} else {
+			return 0.0
+		}
+	}
+	return math.Max(0, x)
+}
