@@ -45,15 +45,16 @@ func (ns *NeuralStack) s_t(i int) float64 {
 	}
 }
 
-// func (ns *NeuralStack) pushAndPopForward(v_t, d_t, u_t float64) {
-// 	ns.d = Append(ns.d, d_t)
-// 	ns.d_error = Append(ns.d_error, 0)
+func (ns *NeuralStack) pushAndPopForward(v_t, d_t, u_t float64) {
+	ns.d = Append(ns.d, d_t)
+	ns.d_error = Append(ns.d_error, 0)
 
-// 	ns.u = Append(ns.u, u_t)
-// 	ns.u_error = Append(ns.u_error, 0)
+	ns.u = Append(ns.u, u_t)
+	ns.u_error = Append(ns.u_error, 0)
 
-//     new_s = [ns.t+1]float64
-//     for i := 0; i < ns.t+1; i++ {
-//         new_s[i] = ns.s_t
-//     }
-// }
+	new_s := make([]float64, ns.t+1)
+	for i := 0; i < ns.t+1; i++ {
+		new_s[i] = ns.s_t(i)
+	}
+	ns.s = append(ns.s, new_s)
+}

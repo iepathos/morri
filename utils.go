@@ -7,7 +7,7 @@ import (
 func Extend(slice []float64, element float64) []float64 {
 	n := len(slice)
 	if n == cap(slice) {
-		newSlice := make([]float64, len(slice), 2*len(slice)+1)
+		newSlice := make([]float64, n, 2*n+1)
 		copy(newSlice, slice)
 		slice = newSlice
 	}
