@@ -58,3 +58,12 @@ func TestTanh(t *testing.T) {
 		t.Error("actualOut from Tanh did not equal the expectedOut")
 	}
 }
+
+func TestTanhOut2Deriv(t *testing.T) {
+	testIn := 5.0
+	expectedOut := -24.0
+	actualOut := TanhOut2Deriv(testIn)
+	if actualOut != expectedOut {
+		t.Error("actualOut from TanhOut2Deriv did not equal the expectedOut")
+	}
+}

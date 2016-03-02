@@ -48,9 +48,9 @@ func Tanh(arr []float64) []float64 {
 	return tanhArr
 }
 
-// func tanh_out2deriv(out) {
-//     return (1 - out**2)
-// }
+func TanhOut2Deriv(out float64) float64 {
+	return (1.0 - math.Pow(out, 2))
+}
 
 // func relu(x, deriv=False) {
 //     if(deriv):
