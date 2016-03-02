@@ -28,6 +28,15 @@ func TestExpArray(t *testing.T) {
 	expectedOut := []float64{1., 3.32011692, 27.11263892}
 	actualOut := ExpArray(testIn)
 	if testEq(actualOut, expectedOut) {
-		t.Error("actualOut from ExpArray not equal to expectedOut")
+		t.Error("actualOut from ExpArray did not equal the expectedOut")
+	}
+}
+
+func TestSigmoid(t *testing.T) {
+	testIn := 5.0
+	expectedOut := 0.99330714907571527
+	actualOut := Sigmoid(testIn)
+	if actualOut != expectedOut {
+		t.Error("actualOut from Sigmoid did not equal the expectedOut")
 	}
 }

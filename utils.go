@@ -32,9 +32,9 @@ func ExpArray(arr []float64) []float64 {
 	return expArr
 }
 
-// func sigmoid(x float64) float64 {
-//     return 1/(1+np.exp(-x))
-// }
+func Sigmoid(x float64) float64 {
+	return 1 / (1 + math.Exp(-x))
+}
 
 // func sigmoid_out2deriv(out) {
 //     return out * (1 - out)
