@@ -40,3 +40,21 @@ func TestSigmoid(t *testing.T) {
 		t.Error("actualOut from Sigmoid did not equal the expectedOut")
 	}
 }
+
+func TestSigmoidOut2Deriv(t *testing.T) {
+	testIn := 5.0
+	expectedOut := -20.0
+	actualOut := SigmoidOut2Deriv(testIn)
+	if actualOut != expectedOut {
+		t.Error("actualOut from SigmoidOut2Deriv did not equal the expectedOut")
+	}
+}
+
+func TestTanh(t *testing.T) {
+	testIn := []float64{0.0, 1.2, 3.3}
+	expectedOut := []float64{0., 0.83365461, 0.99728296}
+	actualOut := Tanh(testIn)
+	if testEq(actualOut, expectedOut) {
+		t.Error("actualOut from Tanh did not equal the expectedOut")
+	}
+}

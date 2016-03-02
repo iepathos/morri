@@ -36,13 +36,17 @@ func Sigmoid(x float64) float64 {
 	return 1 / (1 + math.Exp(-x))
 }
 
-// func sigmoid_out2deriv(out) {
-//     return out * (1 - out)
-// }
+func SigmoidOut2Deriv(out float64) float64 {
+	return out * (1 - out)
+}
 
-// func tanh(x) {
-//     return np.tanh(x)
-// }
+func Tanh(arr []float64) []float64 {
+	var tanhArr []float64
+	for i := range arr {
+		tanhArr = Append(tanhArr, math.Tanh(arr[i]))
+	}
+	return tanhArr
+}
 
 // func tanh_out2deriv(out) {
 //     return (1 - out**2)
