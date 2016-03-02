@@ -23,6 +23,14 @@ func Append(slice []float64, items ...float64) []float64 {
 	return slice
 }
 
+func Sum(arr []float64) float64 {
+	sum := 0.0
+	for i := range arr {
+		sum += arr[i]
+	}
+	return sum
+}
+
 func ExpArray(arr []float64) []float64 {
 	// Golang implementation of Python numpy.exp
 	var expArr []float64

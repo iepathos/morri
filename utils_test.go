@@ -23,6 +23,15 @@ func testEq(a, b []float64) bool {
 	return true
 }
 
+func TestSum(t *testing.T) {
+	testIn := []float64{0.0, 1.2, 3.3}
+	expectedOut := 4.5
+	actualOut := Sum(testIn)
+	if actualOut != expectedOut {
+		t.Error("actualOut from Sum did not equal the expectedOut")
+	}
+}
+
 func TestExpArray(t *testing.T) {
 	testIn := []float64{0.0, 1.2, 3.3}
 	expectedOut := []float64{1., 3.32011692, 27.11263892}
