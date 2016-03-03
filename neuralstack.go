@@ -57,4 +57,5 @@ func (ns *NeuralStack) pushAndPopForward(v_t, d_t, u_t float64) {
 		new_s[i] = ns.s_t(i)
 	}
 	ns.s = append(ns.s, new_s)
+	// ns.s_delta = append(np.zeros_like(new_s))
 }
