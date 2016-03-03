@@ -67,7 +67,6 @@ func Relu(x float64, deriv bool) float64 {
 			return 1.0
 		}
 		return 0.0
-
 	}
 	return math.Max(0, x)
 }

@@ -36,8 +36,8 @@ func (ns *NeuralStack) reset() {
 
 func (ns *NeuralStack) s_t(i int) float64 {
 	if i >= 0 && i < ns.t {
-		inner_sum := ns.s[ns.t-1][i+1 : ns.t-0]
-		return Relu(ns.s[ns.t-1][i]-Relu(ns.u[ns.t]-Sum(inner_sum), false), false)
+		innerSum := ns.s[ns.t-1][i+1 : ns.t-0]
+		return Relu(ns.s[ns.t-1][i]-Relu(ns.u[ns.t]-Sum(innerSum), false), false)
 	} else if i == ns.t {
 		return ns.d[ns.t]
 	} else {
