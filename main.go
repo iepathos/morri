@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// A simple json test handler
 func CityHandler(res http.ResponseWriter, req *http.Request) {
 	data, _ := json.Marshal("{'cities':'San Francisco, Amsterdam, Berlin, New York','Tokyo'}")
 	res.Header().Set("Content-Type", "application/json; charset=utf-8")

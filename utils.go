@@ -4,7 +4,7 @@ import (
 	"math"
 )
 
-// Extends a float64 by a float64 array
+// Extend adds to a float64 array by a float64 array
 func Extend(slice []float64, element float64) []float64 {
 	n := len(slice)
 	if n == cap(slice) {
@@ -17,7 +17,7 @@ func Extend(slice []float64, element float64) []float64 {
 	return slice
 }
 
-// Appends a float64 to a float64 array
+// Append adds a float64 to a float64 array
 func Append(slice []float64, items ...float64) []float64 {
 	for _, item := range items {
 		slice = Extend(slice, item)
@@ -46,12 +46,12 @@ func ExpArray(arr []float64) []float64 {
 	return expArr
 }
 
-// Sigmoid
+// Sigmoid returns the sigmoid of the given float64
 func Sigmoid(x float64) float64 {
 	return 1 / (1 + math.Exp(-x))
 }
 
-// SigmoidOut2Deriv
+// SigmoidOut2Deriv returns the sigmoid out 2 derivation
 func SigmoidOut2Deriv(out float64) float64 {
 	return out * (1 - out)
 }
@@ -65,12 +65,12 @@ func Tanh(arr []float64) []float64 {
 	return tanhArr
 }
 
-// TanhOut2Deriv
+// TanhOut2Deriv returns the tanh out 2 derivation
 func TanhOut2Deriv(out float64) float64 {
 	return (1.0 - math.Pow(out, 2))
 }
 
-// Relu
+// Relu returns the rectified linear unit
 func Relu(x float64, deriv bool) float64 {
 	if deriv {
 		if x >= 0 {
