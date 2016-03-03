@@ -5,6 +5,7 @@ import (
 )
 
 func Extend(slice []float64, element float64) []float64 {
+	// Extends a float64 by a float64 array
 	n := len(slice)
 	if n == cap(slice) {
 		newSlice := make([]float64, n, 2*n+1)
@@ -17,6 +18,7 @@ func Extend(slice []float64, element float64) []float64 {
 }
 
 func Append(slice []float64, items ...float64) []float64 {
+	// Appends a float64 to a float64 array
 	for _, item := range items {
 		slice = Extend(slice, item)
 	}
@@ -42,14 +44,17 @@ func ExpArray(arr []float64) []float64 {
 }
 
 func Sigmoid(x float64) float64 {
+	// Returns the Sigmoid
 	return 1 / (1 + math.Exp(-x))
 }
 
 func SigmoidOut2Deriv(out float64) float64 {
+	// SigmoidOut2Deriv
 	return out * (1 - out)
 }
 
 func Tanh(arr []float64) []float64 {
+	// Golang implementation of Python numpy.tanh
 	var tanhArr []float64
 	for i := range arr {
 		tanhArr = Append(tanhArr, math.Tanh(arr[i]))
@@ -58,10 +63,12 @@ func Tanh(arr []float64) []float64 {
 }
 
 func TanhOut2Deriv(out float64) float64 {
+	// TanhOut2Deriv
 	return (1.0 - math.Pow(out, 2))
 }
 
 func Relu(x float64, deriv bool) float64 {
+	// Relu
 	if deriv {
 		if x >= 0 {
 			return 1.0
